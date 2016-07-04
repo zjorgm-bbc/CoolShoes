@@ -1,16 +1,12 @@
 package view;
 
-import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JFrame;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-
-import sun.rmi.server.Activation.ActivationSystemImpl_Stub;
-
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class SignIn {
 
