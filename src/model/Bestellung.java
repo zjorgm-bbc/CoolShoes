@@ -3,6 +3,8 @@ package model;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import TestData.BestellungTestData;
+
 public class Bestellung {
 	
 	private Kunde kunde;
@@ -34,6 +36,8 @@ public class Bestellung {
 		this.bestelldatum = bestelldatum;
 		this.artikel = artikel;
 		this.lieferungsStatus = lieferungsStatus;
+	}
+	public Bestellung() {
 	}
 
 	/**
@@ -134,7 +138,12 @@ public class Bestellung {
 		this.lieferungsStatus = lieferungsStatus;
 	}
 	
-	
-	
-
+	public static Bestellung getBestellungByNr(int bestellNr){
+		for(Bestellung bestellung : BestellungTestData.bestellungen){
+			if(bestellung.getBestellnummer() == bestellNr){
+				return bestellung;
+			}
+		}
+		return null;
+	}
 }

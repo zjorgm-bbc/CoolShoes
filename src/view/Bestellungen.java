@@ -10,14 +10,19 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import TestData.BestellungTestData;
+
 public class Bestellungen {
 
 	private JFrame frame;
+	public static boolean isAdmin;
+	static JLabel label;
 
 	/**
 	 * Create the application.
 	 */
-	public Bestellungen() {
+	public Bestellungen(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 		initialize();
 	}
 
@@ -43,12 +48,14 @@ public class Bestellungen {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		JLabel label = new JLabel("1234122");
+		label = new JLabel("1234122");
 		label.setBounds(0, 11, 202, 14);
+		label.setText(String.valueOf(BestellungTestData.bestellungen.get(0).getBestellnummer()));
 		panel.add(label);
-
+		
 		JLabel lblNewLabel = new JLabel("Lieferung versandbereit");
 		lblNewLabel.setBounds(212, 11, 186, 14);
+		lblNewLabel.setText(BestellungTestData.bestellungen.get(0).getLieferungsStatus());
 		panel.add(lblNewLabel);
 
 		Button button = new Button("Abmelden");
@@ -70,5 +77,9 @@ public class Bestellungen {
 				new BestellungDetails(panel);
 			}
 		});
+	}
+	
+	public static JLabel getNr(){
+		return label;
 	}
 }

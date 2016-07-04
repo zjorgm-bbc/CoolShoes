@@ -70,7 +70,8 @@ public class SignIn {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(textField_1.getText().equals("1234") && textField.getText().equals("admin")){
-					new Bestellungen();
+					frmAnmelden.dispose();
+					new Bestellungen(true);
 				} else{
 					System.out.println("Wrong userdata");
 				}
