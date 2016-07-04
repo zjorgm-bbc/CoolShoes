@@ -7,6 +7,9 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
+import sun.rmi.server.Activation.ActivationSystemImpl_Stub;
+
 import javax.swing.JLabel;
 
 public class SignIn {
@@ -29,7 +32,7 @@ public class SignIn {
 	private void initialize() {
 		frmAnmelden = new JFrame();
 		frmAnmelden.setTitle("Anmelden");
-		frmAnmelden.setBounds(100, 100, 396, 129);
+		frmAnmelden.setBounds(100, 100, 400, 129);
 		frmAnmelden.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAnmelden.getContentPane().setLayout(null);
 		
@@ -44,7 +47,7 @@ public class SignIn {
 		textField.setColumns(10);
 		
 		JLabel lblEmail = new JLabel("Email/Admin");
-		lblEmail.setBounds(10, 11, 79, 14);
+		lblEmail.setBounds(10, 11, 163, 14);
 		frmAnmelden.getContentPane().add(lblEmail);
 		
 		textField_1 = new JTextField();
@@ -53,7 +56,7 @@ public class SignIn {
 		frmAnmelden.getContentPane().add(textField_1);
 		
 		JLabel lblPasswort = new JLabel("Passwort");
-		lblPasswort.setBounds(207, 11, 46, 14);
+		lblPasswort.setBounds(207, 11, 241, 14);
 		frmAnmelden.getContentPane().add(lblPasswort);
 		
 		JLabel lblNochKeinKonto = new JLabel("Noch kein Konto? Jetzt registrieren!");
@@ -66,5 +69,14 @@ public class SignIn {
 		});
 		frmAnmelden.getContentPane().add(lblNochKeinKonto);
 		this.frmAnmelden.setVisible(true);
+		
+		btnAnmelden.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(lblEmail.getText().equals("1234")&& lblEmail.equals("admin")){
+					Bestellungen bestellungen = new Bestellungen();
+				}
+			}
+		});;
 	}
 }
