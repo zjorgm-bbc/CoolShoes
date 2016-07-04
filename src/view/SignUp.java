@@ -1,10 +1,18 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+import com.sun.scenario.effect.AbstractShadow.ShadowMode;
+
+import sun.rmi.runtime.NewThreadAction;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
@@ -117,5 +125,13 @@ public class SignUp {
 		btnRegistrieren.setBounds(213, 220, 106, 23);
 		frmRegistrieren.getContentPane().add(btnRegistrieren);
 		this.frmRegistrieren.setVisible(true);
+		btnRegistrieren.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Im Moment ist diese Funktion wegen technischen Problemen nicht möglich");	
+			}
+		});
+		
+		
 	}
 }

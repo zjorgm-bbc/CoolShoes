@@ -1,16 +1,12 @@
 package view;
 
-import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JFrame;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-
-import sun.rmi.server.Activation.ActivationSystemImpl_Stub;
-
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class SignIn {
 
@@ -73,8 +69,10 @@ public class SignIn {
 		btnAnmelden.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(lblEmail.getText().equals("1234")&& lblEmail.equals("admin")){
-					Bestellungen bestellungen = new Bestellungen();
+				if(textField_1.getText().equals("1234") && textField.getText().equals("admin")){
+					new Bestellungen();
+				} else{
+					System.out.println("Wrong userdata");
 				}
 			}
 		});;
